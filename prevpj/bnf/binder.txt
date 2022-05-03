@@ -7,7 +7,7 @@ TYPE ::= house | apartment | factory | church | school | hospital | bank | resta
 COMMANDS ::= COMMAND; COMMANDS | ε
 COMMAND ::= line ( VECTOR2 , VECTOR2 ANGLE ) | circle ( VECTOR2 , float ) | box ( VECTOR2 , float , float )
 ANGLE ::= , float | ε
-POINT ::= ( float, float ) | nil
+VECTOR2 ::= ( float, float ) | nil
 STR ::= " string " | nil
 
 --------------------------------------------------------------------------------
