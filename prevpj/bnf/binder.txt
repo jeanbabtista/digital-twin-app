@@ -1,0 +1,76 @@
+CITY ::= city ( STR ) { STREET STREETS };
+STREETS ::= STREET STREETS | ε
+STREET ::= street ( STR ) { BLOCK BLOCKS };
+BLOCKS ::= BLOCK { COMMAND COMMANDS }; BLOCKS | ε
+BLOCK ::= road ( STR ) | building ( STR, TYPE ) | park ( STR ) | lake ( STR ) | river ( STR ) | bridge ( STR )
+TYPE ::= house | apartment | factory | church | school | hospital | bank | restaurant | bar | gasStation
+COMMANDS ::= COMMAND; COMMANDS | ε
+COMMAND ::= line ( VECTOR2 , VECTOR2 ANGLE ) | circle ( VECTOR2 , float ) | box ( VECTOR2 , float , float )
+ANGLE ::= , float | ε
+POINT ::= ( float, float ) | nil
+STR ::= " string " | nil
+
+--------------------------------------------------------------------------------
+PRIMERI:
+
+city ("Maribor") {
+    street ("Koroška cesta") {
+        road ("pot 1") {
+            line((0, 0), (15, 0));
+            line((15, 0), (15, 15), 90);
+        };
+        building ("FERI", school) {
+            box((0, 1), 300, 600);
+        };
+        road ("pot 2") {
+            line((15, 15), (30, 15));
+            circle((30, 20), 5);
+            line((30, 25), (30, 30), 90);
+        };
+        park ("park 1") {
+            cirlce((60, 30), 5);
+        };
+    };
+
+    street ("Gosposvetska cesta") {
+        road ("pot1") {
+            line((0, 0), (0, 15));
+            line((0, 15), (15, 15), 30);
+        };
+        lake ("lake 1") {
+            circle((0, 0), 5);
+        };
+        road ("pot2") {
+            line((15, 15), (15, 30));
+        };
+    };
+
+    street ("Tyrševa ulica") {
+        road ("pot1") {
+            line((15, 30), (15, 60));
+            line((15, 60), (30, 60), 90);
+        };
+        building ("Tyrševa ulica 6", apartment){
+            box((15, 60), 300, 600);
+        };
+        park ("Mestni park") {
+            circle((30, 60), 5);
+        };
+    };
+
+    street ("Titova cesta") {
+        road ("pot1") {
+            line((30, 60), (30, 90));
+            line((30, 90), (45, 90), 60);
+        };
+        road ("pot2"){
+            line((45, 90), (45, 120));
+        }
+        bridge ("Titov most"){
+            line((45, 120), (45, 250));
+        };
+        river ("Drava"){
+            line((150, 150), (20, 150));
+        };
+    };
+};

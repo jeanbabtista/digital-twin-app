@@ -1,0 +1,11 @@
+START       ::= city STR { STREET STREETS }
+STREETS     ::= STREET STREETS | epsilon
+STREET      ::= street STR { BLOCK BLOCKS }
+BLOCKS      ::= BLOCK { COMMAND COMMANDS } ; BLOCKS | epsilon
+BLOCK       ::= road STR | building type TYPE name STR | park STR | lake STR | river STR | bridge STR | tunnel STR
+TYPE        ::= house | apartment | factory | church | school | hospital | bank | restaurant | bar | gasStation
+COMMANDS    ::= COMMAND ; COMMANDS | epsilon
+COMMAND     ::= line ( POINT , POINT ANGLE ) | circle ( POINT , float ) | box ( POINT , float , float )
+ANGLE       ::= , float | epsilon
+POINT       ::= ( float, float ) | nil
+STR         ::= " string " | nil

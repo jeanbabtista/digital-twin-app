@@ -1,0 +1,15 @@
+CITY ::= city string {STREETS};
+STREETS ::= street (string) {STREET_COMPONENTS}; STREETS | ε
+STREET_COMPONENTS ::= BASE_OBJECT (string) {OBJECTS}; STREET_COMPONENTS | BUILDING {OBJECTS}; STREET_COMPONENTS | ε
+BASE_OBJECT ::= road | park | lake | river | bridge | tunnel //tu lahko tunnel po moje odstranimo
+BUILDING ::= building (string, BuildingType::ENUM_TYPE)
+ENUM_TYPE ::= house | apartment | factory | church | school | hospital | bank | restaurant | bar | gasStation
+OBJECTS ::= OBJECT; OBJECTS
+OBJECT ::= LINE | BOX | CIRCLE | ε
+LINE ::= (VECTOR2, VECTOR2, float) | (VECTOR2, VECTOR2)
+BOX ::= (VECTOR2, float, float)
+CIRCLE ::= (VECTOR2, float)
+VECTOR2 ::= (float, float)
+
+float = [0-9]+\.[0-9]*
+string = [a-zA-Z0-9' ']+
