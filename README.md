@@ -10,5 +10,5 @@
 * Matija Šinko [matija.sinko@student.um.si] 
 
 ## Mentor
-* Matej Črepinšek [matej.crepinsek@um.si]😩😩
+* Matej Črepinšek [matej.crepinsek@um.si]
 
