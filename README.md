@@ -7,8 +7,8 @@
 ## Members
 * Žan Bedrač [bedrac.zan@gmail.com]
 * Jaša Zupančič [jasa.zupancic@student.um.si]
-* Matija Šinko [matija.sinko@student.um.si]
+* Matija Šinko [matija.sinko@student.um.si] 
 
 ## Mentor
-* Matej Črepinšek [matej.crepinsek@um.si]
+* Matej Črepinšek [matej.crepinsek@um.si]😩😩
 
